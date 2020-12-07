@@ -1,0 +1,23 @@
+{
+  "name": "rollylni/triggers",
+  "description": "Callback Triggers",
+  "version": "0.0.1",
+  "type": "library",
+  "keywords": ["triggering", "triggers", "callback"],
+  "license": "MIT",
+
+  "authors": [{
+    "name": "Mark Anthony",
+    "email": "rollyllni@gmail.com",
+    "homepage": "https://vk.com/rollylni",
+    "role": "Developer"
+  }],
+
+  "require": {
+    "php": ">=7.1"
+  },
+
+  "autoload": {
+    "files": ["./Triggers.php"]
+  }
+}
