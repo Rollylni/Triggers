@@ -4,6 +4,7 @@ calling callback triggers by its id
 # Example
 ```php
 require "vendor/autoload.php";
+use Triggers;
 
 function example(Triggers $trigg) {
     $trigg->handleTriggers("pre-loop");
