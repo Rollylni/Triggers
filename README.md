@@ -28,8 +28,8 @@ $trigg->addTrigger("end-loop", function() {
 example($trigg);
 ```
 **Output**
-> starting loop!
-> looping 1 iteration!
+> starting loop!\n
+> looping 1 iteration!\n
 > looping 2 iteration!
 > looping 3 iteration!
 > looping 4 iteration!
