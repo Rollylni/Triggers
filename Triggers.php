@@ -4,7 +4,7 @@ class Triggers {
   
     /**
      * 
-     * @var \Closure[][]
+     * @var (\Closure|callable)[][]
      */
     protected $triggers = [];
     
