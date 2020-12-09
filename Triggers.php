@@ -24,6 +24,18 @@ class Triggers {
     public function removeTriggers($id) {
         unset($this->triggers[$id]);
     }
+  
+    /**
+     *
+     * @param scalar $id
+     * @return (\Closure|callable)[][]|(\Closure|callable)[]|null
+     */
+    public function getTriggers($id = null) {
+        if ($id !== null) {
+            return $this->triggers[$id] ?? null;
+        }
+        return $this->triggers;
+    }
     
     /**
      * 
