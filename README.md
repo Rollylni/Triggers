@@ -7,23 +7,23 @@ require "vendor/autoload.php";
 use Triggers;
 
 function example(Triggers $trigg) {
-    $trigg->handleTriggers("pre-loop");
+    $trigg->handle("pre-loop");
     for ($i = 1; $i < 10; $i++) {
-        $trigg->handleTriggers("looping", [$i]);
+        $trigg->handle("looping", [$i]);
     }
-    $trigg->handleTriggers("end-loop");
+    $trigg->handle("end-loop");
 }
 
 $trigg = new Triggers();
-$trigg->addTrigger("pre-loop", function() {
+$trigg->add("pre-loop", function() {
     echo "starting loop!";
 });
 
-$trigg->addTrigger("looping", function($i) {
+$trigg->add("looping", function($i) {
     echo "looping $i iteration!";
 });
 
-$trigg->addTrigger("end-loop", function() {
+$trigg->add("end-loop", function() {
     echo "loop finished!";
 });
 example($trigg);
