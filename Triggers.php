@@ -13,7 +13,7 @@ class Triggers {
      * @param scalar $id
      * @param \Closure|callable $trigger
      */
-    public function addTrigger($id, $trigger) {
+    public function add($id, $trigger) {
         $this->triggers[$id][] = $trigger;
     }
     
@@ -21,7 +21,7 @@ class Triggers {
      * 
      * @param scalar $id
      */
-    public function removeTriggers($id) {
+    public function remove($id) {
         unset($this->triggers[$id]);
     }
   
@@ -30,7 +30,7 @@ class Triggers {
      * @param scalar $id
      * @return (\Closure|callable)[][]|(\Closure|callable)[]|null
      */
-    public function getTriggers($id = null) {
+    public function get($id = null) {
         if ($id !== null) {
             return $this->triggers[$id] ?? null;
         }
@@ -43,7 +43,7 @@ class Triggers {
      * @param mixed[] $args
      * @return bool
      */
-    public function handleTriggers($id, array $args = []) {
+    public function handle($id, array $args = []) {
         if (!isset($this->triggers[$id])) {
             return false;
         }
