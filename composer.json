@@ -1,13 +1,13 @@
 {
   "name": "rollylni/triggers",
   "description": "Callback Triggers",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "library",
   "keywords": ["triggering", "triggers", "callback"],
   "license": "MIT",
 
   "authors": [{
-    "name": "Mark Anthony",
+    "name": "Faruch N.",
     "email": "rollyllni@gmail.com",
     "homepage": "https://vk.com/rollylni",
     "role": "Developer"
