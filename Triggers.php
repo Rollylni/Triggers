@@ -10,6 +10,19 @@ class Triggers {
     
     /**
      * 
+     * @param \TriggersHandler
+     */
+    public function addHandler(\TriggersHandler $handler) {
+        foreach (\get_class_methods($handler) as $method) {
+            if (\substr($method, 0, 2) === "__") { // magic methods
+                continue;
+            }
+            $this->add($method, [$handler, $method]);
+        }
+    }
+    
+    /**
+     * 
      * @param scalar $id
      * @param \Closure|callable $trigger
      */
@@ -44,12 +57,18 @@ class Triggers {
      * @return bool
      */
     public function handle($id, array $args = []) {
+        if (isset($this->triggers["onHandle"])) {
+            foreach ($this->triggers["onHandle"] as $trigger) {
+                if (\is_callable($trigger))($trigger)($id, $args);
+            }
+        }
+        
         if (!isset($this->triggers[$id])) {
             return false;
         }
         
         foreach ($this->triggers[$id] as $trigger) {
-            if (($trigger instanceof \Closure) && \is_callable($trigger)) {
+            if (\is_callable($trigger)) {
                 \call_user_func_array($trigger, $args);
             }
         }
