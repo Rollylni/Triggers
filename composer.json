@@ -18,6 +18,6 @@
   },
 
   "autoload": {
-    "files": ["./Triggers.php", "./TriggerHandler.php"]
+    "files": ["./Triggers.php", "./TriggersHandler.php"]
   }
 }
