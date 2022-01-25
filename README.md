@@ -1,5 +1,5 @@
 # Triggers
-**This library archived, visit a new similar library: [<click>](https://github.com/Kornheiser/Events)**
+**This library archived, visit a new similar library: [click](https://github.com/Kornheiser/Events)**
 
 calling callback triggers by its id
 
